@@ -1,8 +1,8 @@
-package com.busanit501.test501jsp.lunchmenu.dto;
+package com.busanit501.test501jsp.menu.dto;
 
 import java.time.LocalDate;
 
-public class MenuDTO {
+public class MenuDTO2 {
     private Long menuNo;
     private String menuTitle;
     private LocalDate dueDate;

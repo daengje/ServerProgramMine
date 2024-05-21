@@ -11,5 +11,8 @@
   <input type="number" name="num2">
   <button type="submit">전송</button>
 </form>
+<form method="post" action="/todo/register ">
+  <button type="submit">작성</button>
+</form>
 </body>
 </html>

@@ -1,6 +1,7 @@
-package com.busanit501.test501jsp.todo.service;
+package com.busanit501.test501jsp.todo.controller;
 
 import com.busanit501.test501jsp.todo.dto.TodoDTO;
+import com.busanit501.test501jsp.todo.service.TodoService;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,7 +13,7 @@ import java.io.IOException;
 import java.util.List;
 
 @WebServlet(name = "todoList",urlPatterns = "/todo/list")
-public class TodoListController extends HttpServlet {
+public class TodoListController_backup extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // 목록 화면으로 전달,

@@ -1,4 +1,4 @@
-package com.busanit501.test501jsp.todo.service;
+package com.busanit501.test501jsp.todo.controller;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

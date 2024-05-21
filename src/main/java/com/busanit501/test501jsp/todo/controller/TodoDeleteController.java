@@ -1,4 +1,6 @@
-package com.busanit501.test501jsp.todo.service;
+package com.busanit501.test501jsp.todo.controller;
+
+import com.busanit501.test501jsp.todo.service.TodoService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,9 +12,16 @@ import java.io.IOException;
 @WebServlet(name = "todoDelete", urlPatterns = "/todo/delete")
 public class TodoDeleteController extends HttpServlet {
   // 처리
-
+  private TodoService todoService = TodoService.INSTANCE;
   @Override
   protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+    Long tno = Long.valueOf(req.getParameter("tno"));
+    try {
+      todoService.deleteTodo(tno);
+    } catch (Exception e) {
+      throw new RuntimeException(e);
+    }
 
     // 임시 처리했다 치고, 리스트로
     resp.sendRedirect("/todo/list");

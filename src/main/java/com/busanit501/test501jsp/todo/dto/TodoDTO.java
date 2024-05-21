@@ -1,52 +1,19 @@
 package com.busanit501.test501jsp.todo.dto;
 
-import java.time.LocalDate;
+import lombok.*;
 
+import java.time.LocalDate;
+@Builder
+// set/get/toString/equals/hashCode 등 다 포함됨.
+@Data
+// 인자값이 없는 생성자, 기본생성자
+@NoArgsConstructor
+// 모든 인자값을 가지는 생성자.
+@AllArgsConstructor
 public class TodoDTO {
     private Long tno;
     private String title;
     private LocalDate dueDate;
     private boolean finished;
 
-    public Long getTno() {
-        return tno;
-    }
-
-    public void setTno(Long tno) {
-        this.tno = tno;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public LocalDate getDueDate() {
-        return dueDate;
-    }
-
-    public void setDueDate(LocalDate dueDate) {
-        this.dueDate = dueDate;
-    }
-
-    public boolean isFinished() {
-        return finished;
-    }
-
-    public void setFinished(boolean finished) {
-        this.finished = finished;
-    }
-
-    @Override
-    public String toString() {
-        return "TodoDTO{" +
-                "tno=" + tno +
-                ", title='" + title + '\'' +
-                ", dueDate=" + dueDate +
-                ", finished=" + finished +
-                '}';
-    }
 }

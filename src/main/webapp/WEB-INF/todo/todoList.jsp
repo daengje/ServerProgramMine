@@ -1,23 +1,31 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
   <title>JSP-Model2(MVC)-todoList</title>
 </head>
 <body>
-<h1><%= "todoList.jsp" %>
-</h1>
-<br/>
-<h1><%= "임시 todoList 화면. 임시 메인" %>
-</h1>
-<p>서버에서 넘겨 받은 임시 더미 리스트 사용해보기.
-  EL 표기법 으로 \${사용할 변수의 키 }, ex(key 이름 : list)</p>
-<h2>서버에서 넘겨 받은 데이터를 그냥 출력했고, </h2>
-${list}
-<h2>
-  ${list[0].tno}
-  ${list[0].title}
-  ${list[0].dueDate}
-</h2>
+<ul>
+  <button><a href="/todo/register">Todo작성</a></button>
+  <%--  서버 컨트롤러에서 전달 받은 박스, 라벨 이름: list, --%>
+  <%--  내용물: 디비에서 가져온 10개의 값--%>
+  <c:forEach items="${list}" var="dto">
+    <li>
+      <span>
+        <a href="/todo/read?tno=${dto.tno}">${dto.tno}</a>
+      </span>
+      <span>
+          ${dto.title}
+      </span>
+      <span>
+          ${dto.dueDate}
+      </span>
+      <span>
+          ${dto.finished ? "완료" : "미완료"}
+      </span>
+    </li>
+  </c:forEach>
+</ul>
 </body>
 </html>
